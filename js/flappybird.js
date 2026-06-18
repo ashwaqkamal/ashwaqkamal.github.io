@@ -143,7 +143,7 @@ function update(){
 
 if(gameOver) return;
 
-bird.velocity += 0.5;
+bird.velocity += 0.35;
 bird.y += bird.velocity;
 
 pipes.forEach(pipe=>{
