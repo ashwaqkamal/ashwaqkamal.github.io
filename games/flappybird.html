@@ -1,1 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Flappy Bird | Ashwaq Kamal</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f5f7fa;
+    text-align:center;
+    color:#444;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:20px;
+}
+
+h1{
+    margin-bottom:10px;
+}
+
+canvas{
+    background:linear-gradient(#70c5ce,#dff6ff);
+    border:4px solid #666;
+    border-radius:10px;
+    width:100%;
+    max-width:500px;
+    height:auto;
+}
+
+#scoreboard{
+    margin:15px;
+    font-size:22px;
+    font-weight:bold;
+}
+
+#gameOverScreen{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.75);
+    justify-content:center;
+    align-items:center;
+}
+
+#gameOverBox{
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    width:320px;
+}
+
+#gameOverBox button{
+    padding:12px 20px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.stem-box{
+    margin-top:30px;
+    background:white;
+    border:1px solid #ddd;
+    border-radius:10px;
+    padding:20px;
+    text-align:left;
+}
+
+ul{
+    line-height:1.8;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Flappy Bird</h1>
+
+<p>
+Designed by Ashwaq Kamal as part of her STEM and Computer Science portfolio.
+</p>
+
+<div id="scoreboard">
+Score:
+<span id="score">0</span>
+
+|
+
+High Score:
+<span id="highscore">0</span>
+</div>
+
+<canvas id="gameCanvas" width="500" height="700"></canvas>
+
+<div class="stem-box">
+
+<h2>STEM Concepts Demonstrated</h2>
+
+<ul>
+<li>Event-driven programming</li>
+<li>Animation loops</li>
+<li>Physics simulation</li>
+<li>Collision detection</li>
+<li>State management</li>
+<li>Real-time user interaction</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="gameOverScreen">
+
+<div id="gameOverBox">
+
+<h2>Game Over</h2>
+
+<p>
+Final Score:
+<strong id="finalScore">0</strong>
+</p>
+
+<button onclick="restartGame()">
+Play Again
+</button>
+
+</div>
+
+</div>
+
+<script src="../js/flappybird.js"></script>
+
+</body>
+</html>
