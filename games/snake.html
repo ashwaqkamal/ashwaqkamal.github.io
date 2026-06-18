@@ -3,30 +3,65 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Snake Game | Ashwaq Kamal</title>
 
 <style>
+
+*{
+    box-sizing:border-box;
+}
+
 body{
+    margin:0;
     font-family:Arial, Helvetica, sans-serif;
     background:#f5f7fa;
     text-align:center;
-    margin:0;
+    color:#444;
+}
+
+.container{
+    max-width:700px;
+    margin:auto;
     padding:20px;
 }
 
 h1{
-    color:#555;
+    margin-bottom:10px;
 }
 
 #scoreboard{
     font-size:20px;
-    margin:15px;
+    margin-bottom:15px;
 }
 
 canvas{
     background:#111;
     border:4px solid #777;
-    border-radius:8px;
+    border-radius:10px;
+    width:100%;
+    max-width:500px;
+    height:auto;
+}
+
+.controls{
+    margin-top:20px;
+}
+
+.controls button{
+    width:70px;
+    height:70px;
+    font-size:28px;
+    margin:4px;
+    border:none;
+    border-radius:10px;
+    background:#666;
+    color:white;
+    cursor:pointer;
+}
+
+.controls button:hover{
+    background:#555;
 }
 
 #gameOverScreen{
@@ -44,44 +79,78 @@ canvas{
 #gameOverBox{
     background:white;
     padding:30px;
-    border-radius:10px;
-    width:300px;
+    border-radius:12px;
+    width:320px;
 }
 
-button{
-    padding:10px 20px;
-    margin-top:15px;
+#gameOverBox button{
+    padding:12px 20px;
+    border:none;
+    border-radius:8px;
+    background:#666;
+    color:white;
     cursor:pointer;
     font-size:16px;
 }
+
+#gameOverBox button:hover{
+    background:#555;
+}
+
 </style>
 </head>
 
 <body>
 
+<div class="container">
+
 <h1>Snake Game</h1>
 
-<p>Use Arrow Keys to Move</p>
+<p>
+Designed by Ashwaq Kamal as part of her STEM and Computer Science portfolio.
+</p>
 
 <div id="scoreboard">
-Score: <span id="score">0</span> |
+Score: <span id="score">0</span>
+|
 High Score: <span id="highscore">0</span>
 </div>
 
-<canvas id="game" width="400" height="400"></canvas>
+<canvas id="game" width="500" height="500"></canvas>
+
+<div class="controls">
+
+<div>
+<button onclick="setDirection('up')">↑</button>
+</div>
+
+<div>
+<button onclick="setDirection('left')">←</button>
+<button onclick="setDirection('down')">↓</button>
+<button onclick="setDirection('right')">→</button>
+</div>
+
+</div>
+
+</div>
 
 <div id="gameOverScreen">
-    <div id="gameOverBox">
-        <h2>Game Over</h2>
-        <p>
-            Final Score:
-            <strong id="finalScore">0</strong>
-        </p>
 
-        <button onclick="restartGame()">
-            Play Again
-        </button>
-    </div>
+<div id="gameOverBox">
+
+<h2>Game Over</h2>
+
+<p>
+Final Score:
+<strong id="finalScore">0</strong>
+</p>
+
+<button onclick="restartGame()">
+Play Again
+</button>
+
+</div>
+
 </div>
 
 <script>
@@ -90,13 +159,14 @@ const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
 
 const grid = 20;
+const boardSize = 500;
 
 let snake;
 let dx;
 let dy;
 let food;
 let score;
-let gameLoop;
+let loop;
 
 let highScore =
 localStorage.getItem("snakeHighScore") || 0;
@@ -104,143 +174,209 @@ localStorage.getItem("snakeHighScore") || 0;
 document.getElementById("highscore").textContent =
 highScore;
 
-function initializeGame(){
-
-    snake = [
-        {x:200,y:200}
-    ];
-
-    dx = grid;
-    dy = 0;
-
-    food = randomFood();
-
-    score = 0;
-
-    document.getElementById("score").textContent = score;
-
-    document.getElementById("gameOverScreen").style.display =
-    "none";
-
-    clearInterval(gameLoop);
-
-    gameLoop = setInterval(draw,150);
-}
-
 function randomFood(){
 
-    return{
-        x:Math.floor(Math.random()*20)*20,
-        y:Math.floor(Math.random()*20)*20
-    };
+return{
+x:Math.floor(Math.random()*25)*20,
+y:Math.floor(Math.random()*25)*20
+};
+
 }
 
-document.addEventListener("keydown",changeDirection);
+function initializeGame(){
 
-function changeDirection(e){
+snake=[
+{x:240,y:240}
+];
 
-    if(e.key==="ArrowUp" && dy===0){
-        dx=0;
-        dy=-grid;
-    }
+dx=grid;
+dy=0;
 
-    if(e.key==="ArrowDown" && dy===0){
-        dx=0;
-        dy=grid;
-    }
+food=randomFood();
 
-    if(e.key==="ArrowLeft" && dx===0){
-        dx=-grid;
-        dy=0;
-    }
+score=0;
 
-    if(e.key==="ArrowRight" && dx===0){
-        dx=grid;
-        dy=0;
-    }
+document.getElementById("score").textContent=score;
+
+document.getElementById("gameOverScreen")
+.style.display="none";
+
+clearInterval(loop);
+
+loop=setInterval(draw,170);
+
 }
+
+function setDirection(direction){
+
+if(direction==="up" && dy===0){
+dx=0;
+dy=-grid;
+}
+
+if(direction==="down" && dy===0){
+dx=0;
+dy=grid;
+}
+
+if(direction==="left" && dx===0){
+dx=-grid;
+dy=0;
+}
+
+if(direction==="right" && dx===0){
+dx=grid;
+dy=0;
+}
+
+}
+
+document.addEventListener("keydown",(e)=>{
+
+if(e.key==="ArrowUp" || e.key==="w"){
+setDirection("up");
+}
+
+if(e.key==="ArrowDown" || e.key==="s"){
+setDirection("down");
+}
+
+if(e.key==="ArrowLeft" || e.key==="a"){
+setDirection("left");
+}
+
+if(e.key==="ArrowRight" || e.key==="d"){
+setDirection("right");
+}
+
+});
 
 function draw(){
 
-    ctx.clearRect(0,0,400,400);
+ctx.clearRect(0,0,boardSize,boardSize);
 
-    const head = {
-        x:snake[0].x + dx,
-        y:snake[0].y + dy
-    };
+for(let i=0;i<boardSize;i+=grid){
 
-    snake.unshift(head);
+ctx.strokeStyle="#222";
 
-    if(head.x===food.x && head.y===food.y){
+ctx.beginPath();
+ctx.moveTo(i,0);
+ctx.lineTo(i,boardSize);
+ctx.stroke();
 
-        score++;
+ctx.beginPath();
+ctx.moveTo(0,i);
+ctx.lineTo(boardSize,i);
+ctx.lineTo(boardSize,i);
+ctx.stroke();
 
-        document.getElementById("score").textContent =
-        score;
+}
 
-        food = randomFood();
+const head={
+x:snake[0].x+dx,
+y:snake[0].y+dy
+};
 
-    }else{
+snake.unshift(head);
 
-        snake.pop();
+if(head.x===food.x && head.y===food.y){
 
-    }
+score++;
 
-    ctx.fillStyle="red";
-    ctx.fillRect(food.x,food.y,grid,grid);
+document.getElementById("score").textContent=
+score;
 
-    ctx.fillStyle="lime";
+food=randomFood();
 
-    snake.forEach(part=>{
-        ctx.fillRect(part.x,part.y,grid,grid);
-    });
+}else{
 
-    if(
-        head.x < 0 ||
-        head.x >= 400 ||
-        head.y < 0 ||
-        head.y >= 400
-    ){
-        endGame();
-    }
+snake.pop();
 
-    for(let i=1;i<snake.length;i++){
+}
 
-        if(
-            head.x===snake[i].x &&
-            head.y===snake[i].y
-        ){
-            endGame();
-        }
-    }
+ctx.fillStyle="#ff4444";
+
+ctx.beginPath();
+ctx.roundRect(food.x,food.y,20,20,4);
+ctx.fill();
+
+snake.forEach((segment,index)=>{
+
+if(index===0){
+
+ctx.fillStyle="#00ff88";
+
+}else{
+
+ctx.fillStyle="#00cc66";
+
+}
+
+ctx.beginPath();
+ctx.roundRect(
+segment.x,
+segment.y,
+20,
+20,
+5
+);
+
+ctx.fill();
+
+});
+
+if(
+head.x<0 ||
+head.x>=boardSize ||
+head.y<0 ||
+head.y>=boardSize
+){
+endGame();
+}
+
+for(let i=1;i<snake.length;i++){
+
+if(
+head.x===snake[i].x &&
+head.y===snake[i].y
+){
+endGame();
+}
+
+}
+
 }
 
 function endGame(){
 
-    clearInterval(gameLoop);
+clearInterval(loop);
 
-    if(score > highScore){
+if(score>highScore){
 
-        highScore = score;
+highScore=score;
 
-        localStorage.setItem(
-            "snakeHighScore",
-            highScore
-        );
+localStorage.setItem(
+"snakeHighScore",
+highScore
+);
 
-        document.getElementById("highscore")
-        .textContent = highScore;
-    }
+document.getElementById("highscore")
+.textContent=highScore;
 
-    document.getElementById("finalScore")
-    .textContent = score;
+}
 
-    document.getElementById("gameOverScreen")
-    .style.display = "flex";
+document.getElementById("finalScore")
+.textContent=score;
+
+document.getElementById("gameOverScreen")
+.style.display="flex";
+
 }
 
 function restartGame(){
-    initializeGame();
+
+initializeGame();
+
 }
 
 initializeGame();
