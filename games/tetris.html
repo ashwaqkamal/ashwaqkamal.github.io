@@ -1,1 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Tetris | Ashwaq Kamal</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f5f7fa;
+    color:#444;
+    text-align:center;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:20px;
+}
+
+h1{
+    margin-bottom:10px;
+}
+
+canvas{
+    background:#111;
+    border:4px solid #666;
+    border-radius:10px;
+    width:100%;
+    max-width:400px;
+    height:auto;
+}
+
+#scoreboard{
+    font-size:20px;
+    margin:15px;
+    font-weight:bold;
+}
+
+.info-grid{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-top:20px;
+}
+
+.info-box{
+    background:white;
+    border:1px solid #ddd;
+    border-radius:10px;
+    padding:15px;
+    min-width:150px;
+    box-shadow:0 2px 5px rgba(0,0,0,.08);
+}
+
+#gameOverScreen{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.75);
+    justify-content:center;
+    align-items:center;
+}
+
+#gameOverBox{
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    width:320px;
+}
+
+#gameOverBox button{
+    padding:12px 20px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.stem-box{
+    margin-top:30px;
+    background:white;
+    border:1px solid #ddd;
+    border-radius:10px;
+    padding:20px;
+    text-align:left;
+}
+
+.back-link{
+    display:inline-block;
+    margin-top:20px;
+    text-decoration:none;
+    padding:10px 15px;
+    background:#666;
+    color:white;
+    border-radius:8px;
+}
+
+.back-link:hover{
+    background:#555;
+}
+
+ul{
+    line-height:1.8;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Tetris</h1>
+
+<p>
+Designed by Ashwaq Kamal as part of her STEM and Computer Science portfolio.
+</p>
+
+<div id="scoreboard">
+Score:
+<span id="score">0</span>
+</div>
+
+<canvas
+id="gameCanvas"
+width="300"
+height="600">
+</canvas>
+
+<div class="info-grid">
+
+<div class="info-box">
+<h3>Level</h3>
+<p id="level">1</p>
+</div>
+
+<div class="info-box">
+<h3>Lines</h3>
+<p id="lines">0</p>
+</div>
+
+<div class="info-box">
+<h3>High Score</h3>
+<p id="highscore">0</p>
+</div>
+
+</div>
+
+<a
+class="back-link"
+href="../index.html">
+← Back to Portfolio
+</a>
+
+<div class="stem-box">
+
+<h2>STEM Concepts Demonstrated</h2>
+
+<ul>
+<li>Algorithm design</li>
+<li>Grid-based programming</li>
+<li>Collision detection</li>
+<li>Object-oriented thinking</li>
+<li>Game state management</li>
+<li>Keyboard event handling</li>
+<li>Pattern recognition</li>
+<li>Problem solving</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="gameOverScreen">
+
+<div id="gameOverBox">
+
+<h2>Game Over</h2>
+
+<p>
+Final Score:
+<strong id="finalScore">0</strong>
+</p>
+
+<button onclick="restartGame()">
+Play Again
+</button>
+
+</div>
+
+</div>
+
+<script src="../js/tetris.js"></script>
+
+</body>
+</html>
