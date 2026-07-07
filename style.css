@@ -1857,3 +1857,53 @@ section{
     animation:fadeUp .8s ease both;
 
 }
+#backToTop{
+
+    opacity:0;
+
+    visibility:hidden;
+
+}
+/* =====================================
+   JAVASCRIPT SUPPORT
+===================================== */
+
+.hidden{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+
+}
+
+.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+nav a.active{
+
+    color:var(--accent);
+
+}
+
+body.loaded{
+
+    opacity:1;
+
+}
+
+body{
+
+    opacity:0;
+
+    transition:opacity .35s ease;
+
+}
