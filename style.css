@@ -1,1 +1,1859 @@
+/* ==========================================================
+   ASHWAQ KAMAL
+   PROFESSIONAL TEACHING PORTFOLIO
+   VERSION 2.0
+========================================================== */
 
+
+/* ==========================================================
+   RESET
+========================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    color:#2d3748;
+
+    background:#f7f9fc;
+
+    line-height:1.8;
+
+    overflow-x:hidden;
+
+}
+
+
+
+/* ==========================================================
+   VARIABLES
+========================================================== */
+
+:root{
+
+    --primary:#12355B;
+
+    --primary-dark:#0d2843;
+
+    --accent:#C8A45D;
+
+    --light:#f7f9fc;
+
+    --white:#ffffff;
+
+    --gray:#6b7280;
+
+    --dark:#1f2937;
+
+    --border:#e5e7eb;
+
+    --shadow:0 10px 30px rgba(0,0,0,.08);
+
+    --shadow-hover:0 15px 40px rgba(0,0,0,.12);
+
+    --radius:18px;
+
+}
+
+
+
+/* ==========================================================
+   GLOBAL
+========================================================== */
+
+.container{
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:auto;
+
+}
+
+section{
+
+    padding:90px 0;
+
+}
+
+.section-heading{
+
+    text-align:center;
+
+    margin-bottom:60px;
+
+}
+
+.section-heading span{
+
+    display:inline-block;
+
+    color:var(--accent);
+
+    font-size:.95rem;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    font-weight:600;
+
+    margin-bottom:15px;
+
+}
+
+.section-heading h2{
+
+    font-size:2.4rem;
+
+    color:var(--primary);
+
+    font-weight:700;
+
+}
+
+.section-intro{
+
+    max-width:850px;
+
+    margin:0 auto 50px;
+
+    text-align:center;
+
+    color:var(--gray);
+
+    font-size:1.05rem;
+
+}
+
+.light{
+
+    background:#ffffff;
+
+}
+
+
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+header{
+
+    position:sticky;
+
+    top:0;
+
+    z-index:999;
+
+    background:rgba(255,255,255,.95);
+
+    backdrop-filter:blur(14px);
+
+    border-bottom:1px solid var(--border);
+
+}
+
+nav{
+
+    height:82px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.logo{
+
+    font-size:1.5rem;
+
+    font-weight:700;
+
+    color:var(--primary);
+
+}
+
+nav ul{
+
+    display:flex;
+
+    list-style:none;
+
+    gap:32px;
+
+}
+
+nav a{
+
+    text-decoration:none;
+
+    color:var(--dark);
+
+    font-weight:500;
+
+    transition:.25s;
+
+}
+
+nav a:hover{
+
+    color:var(--accent);
+
+}
+
+
+
+/* ==========================================================
+   HERO
+========================================================== */
+
+.hero{
+
+    padding:120px 0 90px;
+
+    background:linear-gradient(135deg,#f7f9fc 0%,#eef4fa 100%);
+
+}
+
+.hero-container{
+
+    display:grid;
+
+    grid-template-columns:1.4fr .9fr;
+
+    gap:60px;
+
+    align-items:center;
+
+}
+
+.hero-subtitle{
+
+    color:var(--accent);
+
+    text-transform:uppercase;
+
+    letter-spacing:2px;
+
+    font-size:.9rem;
+
+    font-weight:600;
+
+    margin-bottom:18px;
+
+}
+
+.hero h1{
+
+    font-size:3.4rem;
+
+    line-height:1.2;
+
+    color:var(--primary);
+
+    margin-bottom:25px;
+
+}
+
+.hero-tagline{
+
+    font-size:1.15rem;
+
+    color:var(--gray);
+
+    max-width:650px;
+
+    margin-bottom:40px;
+
+}
+
+
+
+/* ==========================================================
+   BUTTONS
+========================================================== */
+
+.hero-buttons{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:18px;
+
+}
+
+.btn{
+
+    display:inline-block;
+
+    padding:15px 30px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.btn-primary{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+.btn-primary:hover{
+
+    background:var(--primary-dark);
+
+    transform:translateY(-3px);
+
+}
+
+.btn-secondary{
+
+    background:var(--accent);
+
+    color:white;
+
+}
+
+.btn-secondary:hover{
+
+    transform:translateY(-3px);
+
+    opacity:.92;
+
+}
+
+.btn-outline{
+
+    border:2px solid var(--primary);
+
+    color:var(--primary);
+
+    background:white;
+
+}
+
+.btn-outline:hover{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+
+
+/* ==========================================================
+   HERO CARD
+========================================================== */
+
+.license-card{
+
+    background:white;
+
+    border-radius:var(--radius);
+
+    padding:35px;
+
+    box-shadow:var(--shadow);
+
+    transition:.35s;
+
+}
+
+.license-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow-hover);
+
+}
+
+.license-card h3{
+
+    color:var(--primary);
+
+    margin-bottom:20px;
+
+    font-size:1.4rem;
+
+}
+
+.license-card hr{
+
+    margin:18px 0;
+
+    border:none;
+
+    border-top:1px solid var(--border);
+
+}
+
+.license-card p{
+
+    margin:10px 0;
+
+    color:var(--gray);
+
+}
+
+
+
+/* ==========================================================
+   UTILITIES
+========================================================== */
+
+img{
+
+    max-width:100%;
+
+    display:block;
+
+}
+
+a{
+
+    transition:.25s;
+
+}
+
+.card{
+
+    background:white;
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+}
+
+.text-center{
+
+    text-align:center;
+
+}
+/* ==========================================================
+   PROFESSIONAL HIGHLIGHTS
+========================================================== */
+
+.highlights{
+
+    margin-top:-35px;
+
+    position:relative;
+
+    z-index:20;
+
+}
+
+.highlight-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+}
+
+.highlight-card{
+
+    background:white;
+
+    border-radius:var(--radius);
+
+    padding:35px 28px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+    transition:.35s;
+
+    border-top:5px solid var(--accent);
+
+}
+
+.highlight-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:var(--shadow-hover);
+
+}
+
+.highlight-number{
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:1.5rem;
+
+    margin:0 auto 20px;
+
+}
+
+.highlight-card h3{
+
+    color:var(--primary);
+
+    margin-bottom:12px;
+
+    font-size:1.2rem;
+
+}
+
+.highlight-card p{
+
+    color:var(--gray);
+
+    font-size:.95rem;
+
+}
+
+
+
+/* ==========================================================
+   PROFESSIONAL SUMMARY
+========================================================== */
+
+.summary-grid{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:55px;
+
+    align-items:flex-start;
+
+}
+
+.summary-text p{
+
+    margin-bottom:25px;
+
+    color:var(--gray);
+
+    font-size:1.05rem;
+
+}
+
+.profile-box{
+
+    background:white;
+
+    border-radius:var(--radius);
+
+    padding:35px;
+
+    box-shadow:var(--shadow);
+
+    position:sticky;
+
+    top:120px;
+
+}
+
+.profile-box h3{
+
+    color:var(--primary);
+
+    margin-bottom:25px;
+
+    font-size:1.3rem;
+
+}
+
+.profile-box ul{
+
+    list-style:none;
+
+}
+
+.profile-box li{
+
+    padding:12px 0;
+
+    border-bottom:1px solid var(--border);
+
+    color:var(--dark);
+
+    font-weight:500;
+
+}
+
+.profile-box li:last-child{
+
+    border-bottom:none;
+
+}
+
+
+
+/* ==========================================================
+   EDUCATION & LICENSURE
+========================================================== */
+
+.education-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+}
+
+.education-card{
+
+    background:white;
+
+    border-radius:var(--radius);
+
+    padding:35px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+    transition:.35s;
+
+}
+
+.education-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:var(--shadow-hover);
+
+}
+
+.card-icon{
+
+    width:72px;
+
+    height:72px;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin:0 auto 25px;
+
+    font-size:1.8rem;
+
+}
+
+.education-card h3{
+
+    color:var(--primary);
+
+    margin-bottom:10px;
+
+    font-size:1.3rem;
+
+}
+
+.education-card h4{
+
+    color:var(--accent);
+
+    margin-bottom:18px;
+
+    font-weight:600;
+
+}
+
+.education-card p{
+
+    color:var(--gray);
+
+    margin-bottom:10px;
+
+}
+
+.education-card span{
+
+    display:block;
+
+    margin-top:18px;
+
+    color:var(--primary);
+
+    font-weight:600;
+
+}
+
+
+
+/* ==========================================================
+   PROFESSIONAL SKILLS
+========================================================== */
+
+.skills-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:30px;
+
+    margin-bottom:45px;
+
+}
+
+.skill-card{
+
+    background:white;
+
+    border-radius:var(--radius);
+
+    padding:35px;
+
+    box-shadow:var(--shadow);
+
+    transition:.35s;
+
+}
+
+.skill-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow-hover);
+
+}
+
+.skill-card h3{
+
+    color:var(--primary);
+
+    margin-bottom:22px;
+
+    font-size:1.3rem;
+
+    border-left:5px solid var(--accent);
+
+    padding-left:15px;
+
+}
+
+.skill-card ul{
+
+    list-style:none;
+
+}
+
+.skill-card li{
+
+    padding:10px 0;
+
+    color:var(--gray);
+
+    border-bottom:1px solid #f0f0f0;
+
+}
+
+.skill-card li:last-child{
+
+    border-bottom:none;
+
+}
+
+.skill-card li::before{
+
+    content:"✓";
+
+    color:var(--accent);
+
+    font-weight:bold;
+
+    margin-right:12px;
+
+}
+
+.skills-summary{
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+    text-align:center;
+
+    max-width:1000px;
+
+    margin:0 auto;
+
+}
+
+.skills-summary p{
+
+    color:var(--gray);
+
+    font-size:1.05rem;
+
+    margin:0;
+
+}
+
+
+
+/* ==========================================================
+   SECTION SPACING
+========================================================== */
+
+.section{
+
+    padding:90px 0;
+
+}
+
+.light{
+
+    background:white;
+
+}
+
+
+
+/* ==========================================================
+   SMOOTH CARD ANIMATIONS
+========================================================== */
+
+.highlight-card,
+.education-card,
+.skill-card,
+.profile-box,
+.skills-summary{
+
+    transition:
+
+        transform .35s ease,
+
+        box-shadow .35s ease;
+
+}
+/* ==========================================================
+   PROFESSIONAL EXPERIENCE
+========================================================== */
+
+.timeline{
+
+    position:relative;
+
+    max-width:1000px;
+
+    margin:0 auto;
+
+    padding-left:45px;
+
+}
+
+.timeline::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:18px;
+
+    top:0;
+
+    bottom:0;
+
+    width:4px;
+
+    background:var(--accent);
+
+    border-radius:50px;
+
+}
+
+.timeline-item{
+
+    position:relative;
+
+    margin-bottom:55px;
+
+}
+
+.timeline-item:last-child{
+
+    margin-bottom:0;
+
+}
+
+.timeline-dot{
+
+    position:absolute;
+
+    left:-36px;
+
+    top:18px;
+
+    width:18px;
+
+    height:18px;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    border:4px solid white;
+
+    box-shadow:0 0 0 4px rgba(18,53,91,.12);
+
+}
+
+.timeline-content{
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+    transition:.35s;
+
+}
+
+.timeline-content:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:var(--shadow-hover);
+
+}
+
+.timeline-date{
+
+    display:inline-block;
+
+    color:var(--accent);
+
+    font-size:.9rem;
+
+    font-weight:600;
+
+    margin-bottom:12px;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+
+}
+
+.timeline-content h3{
+
+    color:var(--primary);
+
+    margin-bottom:6px;
+
+    font-size:1.4rem;
+
+}
+
+.timeline-content h4{
+
+    color:var(--gray);
+
+    margin-bottom:20px;
+
+    font-weight:500;
+
+}
+
+.timeline-content p{
+
+    color:var(--gray);
+
+    margin-bottom:20px;
+
+}
+
+.timeline-content ul{
+
+    margin-left:20px;
+
+}
+
+.timeline-content li{
+
+    margin-bottom:10px;
+
+    color:var(--gray);
+
+}
+
+
+
+/* ==========================================================
+   STEM & EDUCATIONAL TECHNOLOGY
+========================================================== */
+
+.projects-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+    margin-top:45px;
+
+}
+
+.project-card{
+
+    background:white;
+
+    border-radius:var(--radius);
+
+    padding:35px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+    transition:.35s;
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.project-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow-hover);
+
+}
+
+.project-icon{
+
+    width:80px;
+
+    height:80px;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin:0 auto 25px;
+
+    font-size:2rem;
+
+}
+
+.project-card h3{
+
+    color:var(--primary);
+
+    margin-bottom:18px;
+
+}
+
+.project-card p{
+
+    color:var(--gray);
+
+    flex:1;
+
+}
+
+.project-button{
+
+    display:inline-block;
+
+    margin-top:28px;
+
+    padding:14px 28px;
+
+    border-radius:40px;
+
+    background:var(--accent);
+
+    color:white;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.project-button:hover{
+
+    background:var(--primary);
+
+}
+
+.innovation-box{
+
+    margin-top:60px;
+
+    background:white;
+
+    padding:45px;
+
+    border-left:6px solid var(--accent);
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+}
+
+.innovation-box h3{
+
+    color:var(--primary);
+
+    margin-bottom:18px;
+
+}
+
+.innovation-box p{
+
+    color:var(--gray);
+
+}
+
+
+
+/* ==========================================================
+   TEACHING PHILOSOPHY
+========================================================== */
+
+.philosophy-layout{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:45px;
+
+    align-items:flex-start;
+
+}
+
+.philosophy-text p{
+
+    margin-bottom:22px;
+
+    color:var(--gray);
+
+}
+
+.philosophy-card{
+
+    background:white;
+
+    border-radius:var(--radius);
+
+    padding:35px;
+
+    box-shadow:var(--shadow);
+
+    position:sticky;
+
+    top:120px;
+
+}
+
+.philosophy-card h3{
+
+    color:var(--primary);
+
+    margin-bottom:25px;
+
+}
+
+.philosophy-card ul{
+
+    list-style:none;
+
+    margin-bottom:30px;
+
+}
+
+.philosophy-card li{
+
+    padding:12px 0;
+
+    border-bottom:1px solid var(--border);
+
+    color:var(--dark);
+
+}
+
+.philosophy-card li:last-child{
+
+    border-bottom:none;
+
+}
+
+.philosophy-card .btn{
+
+    width:100%;
+
+    text-align:center;
+
+}
+
+
+
+/* ==========================================================
+   PROJECTS & PHILOSOPHY ANIMATIONS
+========================================================== */
+
+.timeline-content,
+.project-card,
+.innovation-box,
+.philosophy-card{
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+
+}
+
+.timeline-content:hover,
+.project-card:hover,
+.innovation-box:hover,
+.philosophy-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow-hover);
+
+}
+/* ==========================================================
+   RESUME & DOCUMENTS
+========================================================== */
+
+.documents-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:35px;
+
+    margin-top:50px;
+
+}
+
+.document-card{
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:var(--radius);
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+    transition:.35s;
+
+}
+
+.document-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow-hover);
+
+}
+
+.document-icon{
+
+    width:80px;
+
+    height:80px;
+
+    margin:0 auto 25px;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:2rem;
+
+}
+
+.document-card h3{
+
+    color:var(--primary);
+
+    margin-bottom:18px;
+
+}
+
+.document-card p{
+
+    color:var(--gray);
+
+    margin-bottom:30px;
+
+}
+
+
+
+/* ==========================================================
+   CONTACT
+========================================================== */
+
+.contact-wrapper{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+    margin-bottom:50px;
+
+}
+
+.contact-card{
+
+    background:white;
+
+    border-radius:var(--radius);
+
+    padding:35px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+    transition:.35s;
+
+}
+
+.contact-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow-hover);
+
+}
+
+.contact-card h3{
+
+    color:var(--primary);
+
+    margin-bottom:15px;
+
+}
+
+.contact-card p{
+
+    color:var(--gray);
+
+}
+
+.contact-card a{
+
+    color:var(--primary);
+
+    text-decoration:none;
+
+    word-break:break-word;
+
+}
+
+.contact-card a:hover{
+
+    color:var(--accent);
+
+}
+
+.contact-message{
+
+    max-width:900px;
+
+    margin:auto;
+
+    text-align:center;
+
+    color:var(--gray);
+
+    font-size:1.05rem;
+
+}
+
+
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+footer{
+
+    background:var(--primary);
+
+    color:white;
+
+    padding:70px 0 35px;
+
+}
+
+.footer-grid{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr 1fr;
+
+    gap:50px;
+
+    margin-bottom:40px;
+
+}
+
+.footer-grid h3,
+
+.footer-grid h4{
+
+    margin-bottom:20px;
+
+}
+
+.footer-grid p{
+
+    color:rgba(255,255,255,.85);
+
+    margin-bottom:10px;
+
+}
+
+.footer-grid ul{
+
+    list-style:none;
+
+}
+
+.footer-grid li{
+
+    margin-bottom:12px;
+
+}
+
+.footer-grid a{
+
+    color:rgba(255,255,255,.85);
+
+    text-decoration:none;
+
+}
+
+.footer-grid a:hover{
+
+    color:white;
+
+}
+
+footer hr{
+
+    border:none;
+
+    border-top:1px solid rgba(255,255,255,.15);
+
+    margin:30px 0;
+
+}
+
+.copyright{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    color:rgba(255,255,255,.75);
+
+    font-size:.9rem;
+
+}
+
+
+
+/* ==========================================================
+   BACK TO TOP
+========================================================== */
+
+#backToTop{
+
+    position:fixed;
+
+    right:30px;
+
+    bottom:30px;
+
+    width:55px;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:var(--accent);
+
+    color:white;
+
+    font-size:1.4rem;
+
+    cursor:pointer;
+
+    box-shadow:var(--shadow);
+
+    transition:.3s;
+
+    z-index:1000;
+
+}
+
+#backToTop:hover{
+
+    background:var(--primary);
+
+    transform:translateY(-5px);
+
+}
+
+
+
+/* ==========================================================
+   RESPONSIVE DESIGN
+========================================================== */
+
+@media(max-width:1100px){
+
+.hero-container,
+
+.summary-grid,
+
+.philosophy-layout{
+
+    grid-template-columns:1fr;
+
+}
+
+.education-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.projects-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.highlight-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.profile-box,
+
+.philosophy-card{
+
+    position:static;
+
+}
+
+.footer-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+}
+
+
+
+@media(max-width:768px){
+
+nav{
+
+    flex-direction:column;
+
+    height:auto;
+
+    padding:20px 0;
+
+}
+
+nav ul{
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:18px;
+
+    margin-top:20px;
+
+}
+
+.hero{
+
+    padding-top:70px;
+
+}
+
+.hero h1{
+
+    font-size:2.4rem;
+
+}
+
+.hero-buttons{
+
+    flex-direction:column;
+
+}
+
+.hero-buttons .btn{
+
+    width:100%;
+
+    text-align:center;
+
+}
+
+.education-grid,
+
+.skills-grid,
+
+.projects-grid,
+
+.documents-grid,
+
+.contact-wrapper,
+
+.highlight-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.timeline{
+
+    padding-left:25px;
+
+}
+
+.timeline::before{
+
+    left:10px;
+
+}
+
+.timeline-dot{
+
+    left:-27px;
+
+}
+
+.section-heading h2{
+
+    font-size:2rem;
+
+}
+
+.copyright{
+
+    flex-direction:column;
+
+    gap:10px;
+
+    text-align:center;
+
+}
+
+}
+
+
+
+@media(max-width:480px){
+
+.container{
+
+    width:94%;
+
+}
+
+section{
+
+    padding:70px 0;
+
+}
+
+.hero h1{
+
+    font-size:2rem;
+
+}
+
+.section-heading h2{
+
+    font-size:1.7rem;
+
+}
+
+.document-card,
+
+.skill-card,
+
+.education-card,
+
+.project-card,
+
+.contact-card,
+
+.highlight-card,
+
+.timeline-content,
+
+.license-card{
+
+    padding:25px;
+
+}
+
+#backToTop{
+
+    width:48px;
+
+    height:48px;
+
+    right:18px;
+
+    bottom:18px;
+
+}
+
+}
+
+
+
+/* ==========================================================
+   SIMPLE FADE ANIMATION
+========================================================== */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.hero,
+
+.highlight-card,
+
+.education-card,
+
+.skill-card,
+
+.timeline-item,
+
+.project-card,
+
+.document-card,
+
+.contact-card{
+
+    animation:fadeUp .8s ease both;
+
+}
