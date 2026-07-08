@@ -1308,6 +1308,43 @@ a{
 
 }
 
+.card-icon,
+.project-icon,
+.document-icon{
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin:0 auto 25px;
+
+    font-size:1.5rem;
+
+    line-height:1;
+
+}
+
+.card-icon{
+
+    background:#eef4fa;
+
+    border:2px solid var(--primary);
+
+}
+
+
 .document-card h3{
 
     color:var(--primary);
